@@ -6,5 +6,7 @@
         <item name="toolbarStyle">@style/AppTheme.ToolBarStyle</item>
     </style>
 
-    <style name="AppTheme.ToolBarStyle" parent="Widget.MaterialComponents.Toolbar.PrimarySurface" />
+    <style name="AppTheme.ToolBarStyle" parent="Widget.MaterialComponents.Toolbar.PrimarySurface">
+        <item name="android:paddingEnd">4dp</item>
+    </style>
 </resources>
