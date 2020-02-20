@@ -29,8 +29,10 @@ class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
         val advertisingId = AdvertisingIdClient.getAdvertisingIdInfo(applicationContext).id
 
         runOnUiThread {
-            Log.e(TAG, "AdvertisingId=$advertisingId")
             editTextAdvertisingId.setText(advertisingId)
+            buttonLogcatAdvertisingId.setOnClickListener {
+                Log.e(TAG, "AdvertisingId=$advertisingId")
+            }
             buttonCopyAdvertisingId.setOnClickListener {
                 (getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager).run {
                     setPrimaryClip(ClipData.newPlainText("", advertisingId))

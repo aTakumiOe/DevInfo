@@ -30,13 +30,29 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/buttonCopyAdvertisingId"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:text="Copy"
-            />
+            android:layout_marginTop="4dp"
+            android:gravity="end"
+            android:orientation="horizontal">
 
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:id="@+id/buttonLogcatAdvertisingId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Logcat"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonCopyAdvertisingId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Copy"
+                />
+
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>
