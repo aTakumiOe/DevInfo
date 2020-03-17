@@ -42,7 +42,7 @@
                 android:id="@+id/buttonLogcatAdvertisingId"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Logcat"
+                android:text="@string/logcat"
                 />
 
             <com.google.android.material.button.MaterialButton
@@ -50,7 +50,49 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="Copy"
+                android:text="@string/copy"
+                />
+
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="FirebaseInstanceId">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextFirebaseInstanceId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                android:selectAllOnFocus="true"
+                tools:text="xxx"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:id="@+id/buttonLogcatFirebaseInstanceId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/logcat"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonCopyFirebaseInstanceId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/copy"
                 />
 
         </LinearLayout>

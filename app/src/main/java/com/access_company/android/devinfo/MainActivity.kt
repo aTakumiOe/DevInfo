@@ -4,12 +4,13 @@ import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.ads.identifier.AdvertisingIdClient
+import com.google.firebase.iid.FirebaseInstanceId
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.*
 
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
 
         launch {
             loadAdvertisingId()
+            loadFirebaseInstanceId()
         }
     }
 
@@ -60,6 +62,22 @@ class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
                 }
             }
         }
+    }
+
+    private fun loadFirebaseInstanceId() {
+        FirebaseInstanceId.getInstance().instanceId
+            .addOnCompleteListener { task ->
+                val token = task.result?.token
+                editTextFirebaseInstanceId.setText(token)
+                buttonLogcatFirebaseInstanceId.setOnClickListener {
+                    Log.e(TAG, "FirebaseInstanceId=$token")
+                }
+                buttonCopyFirebaseInstanceId.setOnClickListener {
+                    (getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager).run {
+                        setPrimaryClip(ClipData.newPlainText("", token))
+                    }
+                }
+            }
     }
 
     override fun onDestroy() {

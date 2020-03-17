@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        android:name=".DevInfoApplication"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name="com.access_company.android.devinfo.MainActivity">
             <intent-filter>
